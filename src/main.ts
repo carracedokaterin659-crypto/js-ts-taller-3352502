@@ -1,20 +1,21 @@
-// 1. Declaración de variables y tipos primitivos
-const systemName: string = "SENA ADSO Core";
-const versionNumber: number = 1.0;
-let isSystemActive: boolean = true;
-let totalLearners: number = 28;
+import { type User, Role } from "./interfaces/user.interface";
 
-// 2. Uso de Template Strings
-const systemSummary: string = `
-========================================
-🚀 SISTEMA: ${systemName} (v${versionNumber})
-📊 Estado: ${isSystemActive ? "Activo" : "Inactivo"}
-👥 Aprendices inscritos: ${totalLearners}
-========================================
-`;
+const instructor: User = {
+  id: 1,
+  name: "Pedro Pimienta",
+  email: "pedro@sena.edu.co",
+  role: Role.INSTRUCTOR,
+  isActive: true,
+  age: 28
+};
 
-console.log(systemSummary);
+const learner1: User = {
+  id: 2,
+  name: "María López",
+  email: "maria@sena.edu.co",
+  role: Role.LEARNER,
+  isActive: true
+};
 
-console.log("========================================");
-console.log("📌 Prueba 01 - Katherin Carracedo");
-console.log('========================================')
+console.log("Instructor registrado:", instructor);
+console.log(`Aprendiz: ${learner1.name} | Rol: ${learner1.role}`);
